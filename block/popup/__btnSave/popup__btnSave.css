@@ -1,0 +1,27 @@
+.popup__btnSave {
+    margin: 45px 22px 25px;
+    width: 238px;
+    height: 46px;
+    text-align: center;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    border: 0;
+    border-radius: 2px;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+@media screen and (min-width: 1280px) {
+    .popup__btnSave {
+        margin: 62px 36px 37px;
+        width: 358px;
+        height: 50px;
+        text-align: center;
+        font-family: 'Inter';
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.2;
+    }
+}

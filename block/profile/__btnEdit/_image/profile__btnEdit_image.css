@@ -1,0 +1,13 @@
+.profile__editBtn_image {
+    margin: 0;
+    padding: 0;
+    width: 7.5px;
+    height: 7.5px;
+}
+
+@media screen and (min-width: 1280px) {
+    .profile__editBtn_image {
+        width: 10px;
+        height: 10px;
+    }
+}
