@@ -9,7 +9,6 @@ let inputSubtitle = document.querySelector('#subtitle');
 inputTitle.value = title.textContent;
 inputSubtitle.value = subtitle.textContent;
 
-
 function openPopup () {
     let popup = document.querySelector('.popup');
     popup.classList.remove('popup');
@@ -33,3 +32,9 @@ function savePopup () {
 btnEdit.addEventListener('click', openPopup);
 btnClose.addEventListener('click', closePopup);
 btnSave.addEventListener('click', savePopup);
+
+function handleKeyPress(e){
+    if (e.keyCode == 13) {
+        savePopup ();
+    }
+}
