@@ -1,4 +1,4 @@
-.profile__btnEdit {
+.profile__edit-btn {
     margin: 0 0 7px;
     padding: 0;
     height: 18px;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-    .profile__btnEdit {
+    .profile__edit-btn {
         margin-bottom: 11px;
         grid-row: 1/2;
         grid-column: 3/4;
