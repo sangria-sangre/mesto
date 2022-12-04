@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,77 +10,78 @@
 </head>
 
 <body class="body">
-        
-    <section class="popup">
-        <div class="popup__background">
+
+    <div class="popup">
         <div class="popup__container">
-            <button class="popup__close-btn"><img class="popup__close-icon" src="./images/close_icon.svg" alt="Белый крест"></button>
-            <h2 class="popup__name">Редактировать профиль</h2>
-            <input class="popup__input" id="title" type="text" onkeypress="handleKeyPress(event)">
-            <input class="popup__input" id="subtitle" type="text" onkeypress="handleKeyPress(event)">
-            <button class="popup__save-btn">Сохранить</button>
+            <button class="popup__close-btn" type="button"></button>
+            <form action="get" name="profile-edit">
+                <legend class="popup__name">Редактировать профиль</legend>
+                <input class="popup__input popup__input_title" type="text" name="profile-name">
+                <input class="popup__input popup__input_subtitle" type="text" name="profile-description">
+                <button class="popup__save-btn" type="submit">Сохранить</button>
+            </form>
         </div>
-        </div>
-    </section>
-
-    <div class="page">
-    <header class="header">
-        <img class="header__logo" src="./images/logo.svg" alt="Лого - Месьл">
-    </header>
-
-    <main class="main">
-    <section class="profile">
-        <div class="profile__image"></div>
-        <h1 class="profile__title">Жак-Ив Кусто</h1>
-        <button class="profile__edit-btn"><img class="profile__edit-icon" src="./images/edit_profile.svg" alt="Карандаш белый"></button>
-        <p class="profile__subtitle">Исследователь океана</p>
-        <button class="profile__add-btn"><img class="profile__add-icon" src="./images/plus.svg" alt="Белый плюс"></button>
-    </section>
-
-    <section class="elements">
-        <div class="element">
-            <img class="element__image" src="./images/karachaevsk.jpg" alt="Замок">
-            <h2 class="element__title">Карачаево-Черкесия</h2>
-            <div class="element__like"></div>
-        </div>
-
-        <div class="element">
-            <img class="element__image" src="./images/elbrus.png" alt="Эльбрус на закате">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <div class="element__like"></div>
-        </div>
-
-        <div class="element">
-            <img class="element__image" src="./images/dombay.png" alt="Высокая гора и лес">
-            <h2 class="element__title">Домбай</h2>
-            <div class="element__like"></div>
-        </div>
-
-        <div class="element">
-            <img class="element__image" src="./images/elbrus.png" alt="Эльбрус на закате">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <div class="element__like"></div>
-        </div>
-
-        <div class="element">
-            <img class="element__image" src="./images/dombay.png" alt="Высокая гора и лес">
-            <h2 class="element__title">Домбай</h2>
-            <div class="element__like"></div>
-        </div>
-
-        <div class="element">
-            <img class="element__image" src="./images/karachaevsk.jpg" alt="Замок">
-            <h2 class="element__title">Карачаево-Черкесия</h2>
-            <div class="element__like"></div>
-        </div>
-    </section>
-    </main>
-
-    <footer class="footer">
-        &copy; 2020 Mesto Russia
-    </footer>
     </div>
 
-    <script src="./index.js"></script>
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" src="./images/logo.svg" alt="Лого - Месьл">
+        </header>
+
+        <main class="main">
+            <section class="profile">
+                <img class="profile__image" src="./images/image_profile.jpg"></img>
+                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <button class="profile__edit-btn" type="button"></button>
+                <p class="profile__subtitle">Исследователь океана</p>
+                <button class="profile__add-btn" type="button"></button>
+            </section>
+
+            <section class="elements">
+                <article class="element">
+                    <img class="element__image" src="./images/karachaevsk.jpg" alt="Замок">
+                    <h2 class="element__title">Карачаево-Черкесия</h2>
+                    <button class="element__like-btn" type="button"></button>
+                </article>
+
+                <article class="element">
+                    <img class="element__image" src="./images/elbrus.png" alt="Эльбрус на закате">
+                    <h2 class="element__title">Гора Эльбрус</h2>
+                    <button class="element__like-btn" type="button"></button>
+                </article>
+
+                <article class="element">
+                    <img class="element__image" src="./images/dombay.png" alt="Высокая гора и лес">
+                    <h2 class="element__title">Домбай</h2>
+                    <button class="element__like-btn" type="button"></button>
+                </article>
+
+                <article class="element">
+                    <img class="element__image" src="./images/elbrus.png" alt="Эльбрус на закате">
+                    <h2 class="element__title">Гора Эльбрус</h2>
+                    <button class="element__like-btn" type="button"></button>
+                </article>
+
+                <article class="element">
+                    <img class="element__image" src="./images/dombay.png" alt="Высокая гора и лес">
+                    <h2 class="element__title">Домбай</h2>
+                    <button class="element__like-btn" type="button"></button>
+                </article>
+
+                <article class="element">
+                    <img class="element__image" src="./images/karachaevsk.jpg" alt="Замок">
+                    <h2 class="element__title">Карачаево-Черкесия</h2>
+                    <button class="element__like-btn" type="button"></button>
+                </article>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2020 Mesto Russia</p>
+        </footer>
+    </div>
+
+    <script src="./scripts/index.js"></script>
 </body>
+
 </html>
