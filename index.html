@@ -14,10 +14,10 @@
     <div class="popup">
         <div class="popup__container">
             <button class="popup__close-btn" type="button"></button>
-            <form action="get" name="profile-edit">
-                <h2 class="popup__name">Редактировать профиль</h2>
-                <input class="popup__input popup__input_title" type="text" name="profile-name">
-                <input class="popup__input popup__input_subtitle" type="text" name="profile-description">
+            <form class="popup__form" action="get" name="profile-edit">
+                <legend class="popup__name">Редактировать профиль</legend>
+                <input class="popup__input popup__input_type_title" type="text" name="profile-name">
+                <input class="popup__input popup__input_type_subtitle" type="text" name="profile-description">
                 <button class="popup__save-btn" type="submit">Сохранить</button>
             </form>
         </div>
@@ -77,7 +77,7 @@
         </main>
 
         <footer class="footer">
-            <p>&copy; 2020 Mesto Russia</p>
+            <p class="footer__title">&copy; 2020 Mesto Russia</p>
         </footer>
     </div>
 
