@@ -1,7 +1,7 @@
 //btn close
-const btnClose = document.querySelectorAll('.popup__close-btn');
+const btnsClose = document.querySelectorAll('.popup__close-btn');
 
-btnClose.forEach((button) => {
+btnsClose.forEach((button) => {
     const popup = button.closest('.popup');
     button.addEventListener('click', () => closePopup(popup));
 });
@@ -49,6 +49,8 @@ const imagePopupSubtitle = document.querySelector('.popup__title_image');
 const profileBtnAdd = document.querySelector('.profile__add-btn');
 const itemForm = document.querySelector('.popup__form_item');
 const itemPopup = document.querySelector('.popup_item');
+const itemInputTitle = document.querySelector('.popup__input_item_title');
+const itemInputImage = document.querySelector('.popup__input_item_image');
 const initialCards = [
     {
         name: 'Архыз',
@@ -79,7 +81,6 @@ const initialCards = [
 const containerElements = document.querySelector('.elements');
 const elementTemplate = document.querySelector('#element').content;
 const cardTemplate = elementTemplate.querySelector('.element').cloneNode(true);
-let cardElement;
 
 function createCard(title, image) {
 
@@ -103,14 +104,13 @@ function createCard(title, image) {
             imagePopup.classList.add('popup_opened');
         }); 
 
-    cardElement = cloneElement;
-    return cardElement;
+    return cloneElement;
 }
 
 function showCards() {
     initialCards.forEach(function (item) {;
-        createCard(item.name, item.link);
-        containerElements.append(cardElement);
+        const cardElement = createCard(item.name, item.link);
+        containerElements.prepend(cardElement);
     });
 }
 showCards();
@@ -118,16 +118,15 @@ showCards();
 function addCards(event) {
     event.preventDefault();
 
-    const title = document.querySelector('.popup__input_item_title');
-    const image = document.querySelector('.popup__input_item_image');
+    const title = itemInputTitle.value;
+    const image = itemInputImage.value;
 
-    createCard(title.value, image.value);
+    const cardElement = createCard(title, image);
     containerElements.prepend(cardElement);
 
     closePopup(itemPopup);
 
-    title.value = '';
-    image.value = '';
+    event.target.reset();
 }
 
 
