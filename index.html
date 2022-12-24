@@ -22,9 +22,31 @@
         </div>
     </div>
 
+    <div class="popup-item">
+        <div class="popup-item__container">
+            <button class="popup-item__close-btn" type="button"></button>
+            <form class="popup-item__form" action="get" name="new-item">
+                <h2 class="popup-item__name">Новое место</h2>
+                <input class="popup-item__input popup-item__input_type_title" type="text" name="item-name"
+                    placeholder="Название">
+                <input class="popup-item__input popup-item__input_type_image" type="text" name="item-image"
+                    placeholder="Ссылка на картинку">
+                <button class="popup-item__create-btn" type="submit">Создать</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup-image">
+        <div class="popup-image__container">
+            <button class="popup-image__close-btn" type="button"></button>
+            <img class="popup-image__image">
+            <p class="popup-image__subtitle"></p>
+        </div>
+    </div>
+
     <div class="page">
         <header class="header">
-            <img class="header__logo" src="./images/logo.svg" alt="Лого - Месьл">
+            <img class="header__logo" src="./images/logo.svg" alt="Лого - Место">
         </header>
 
         <main class="main">
@@ -37,41 +59,7 @@
             </section>
 
             <section class="elements">
-                <article class="element">
-                    <img class="element__image" src="./images/karachaevsk.jpg" alt="Замок">
-                    <h2 class="element__title">Карачаево-Черкесия</h2>
-                    <button class="element__like-btn" type="button"></button>
-                </article>
 
-                <article class="element">
-                    <img class="element__image" src="./images/elbrus.png" alt="Эльбрус на закате">
-                    <h2 class="element__title">Гора Эльбрус</h2>
-                    <button class="element__like-btn" type="button"></button>
-                </article>
-
-                <article class="element">
-                    <img class="element__image" src="./images/dombay.png" alt="Высокая гора и лес">
-                    <h2 class="element__title">Домбай</h2>
-                    <button class="element__like-btn" type="button"></button>
-                </article>
-
-                <article class="element">
-                    <img class="element__image" src="./images/elbrus.png" alt="Эльбрус на закате">
-                    <h2 class="element__title">Гора Эльбрус</h2>
-                    <button class="element__like-btn" type="button"></button>
-                </article>
-
-                <article class="element">
-                    <img class="element__image" src="./images/dombay.png" alt="Высокая гора и лес">
-                    <h2 class="element__title">Домбай</h2>
-                    <button class="element__like-btn" type="button"></button>
-                </article>
-
-                <article class="element">
-                    <img class="element__image" src="./images/karachaevsk.jpg" alt="Замок">
-                    <h2 class="element__title">Карачаево-Черкесия</h2>
-                    <button class="element__like-btn" type="button"></button>
-                </article>
             </section>
         </main>
 
@@ -79,6 +67,15 @@
             <p class="footer__title">&copy; 2020 Mesto Russia</p>
         </footer>
     </div>
+
+    <template id="element">
+        <article class="element">
+            <img class="element__image">
+            <h2 class="element__title"></h2>
+            <button class="element__like-btn" type="button"></button>
+            <button class="element__delete-btn" type="button"></button>
+        </article>
+    </template>
 
     <script src="./scripts/index.js"></script>
 </body>
