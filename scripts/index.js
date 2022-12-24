@@ -81,6 +81,7 @@ function showItems() {
     initialCards.forEach(function (element) {
         const cloneElement = elementTemplate.querySelector('.element').cloneNode(true);
         cloneElement.querySelector('.element__image').src = element.link;
+        cloneElement.querySelector('.element__image').alt = element.name;
         cloneElement.querySelector('.element__title').textContent = element.name;
 
         cloneElement.querySelector('.element__like-btn').addEventListener('click', function (event) {
@@ -93,6 +94,7 @@ function showItems() {
 
         cloneElement.querySelector('.element__image').addEventListener('click', function () {
             popupImage.querySelector('.popup-image__image').src = element.link;
+            popupImage.querySelector('.popup-image__image').alt = element.name;
             popupImage.querySelector('.popup-image__subtitle').textContent = element.name;
             popupImage.classList.add('popup-image_opened');
             popupImage.classList.add('animation-open');
