@@ -11,8 +11,8 @@ btnClose.forEach((button) => {
 const profileBtnEdit = document.querySelector('.profile__edit-btn');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
-const profileTitleInput = document.querySelector('.popup__input_profile_type_title');
-const profileSubtitleInput = document.querySelector('.popup__input_profile_type_subtitle');
+const profileTitleInput = document.querySelector('.popup__input_profile_title');
+const profileSubtitleInput = document.querySelector('.popup__input_profile_subtitle');
 const profileForm = document.querySelector('.popup__form_profile');
 const profilePopup = document.querySelector('.popup_profile');
 
@@ -118,8 +118,8 @@ showCards();
 function addCards(event) {
     event.preventDefault();
 
-    const title = document.querySelector('.popup__input_item_type_title');
-    const image = document.querySelector('.popup__input_item_type_image');
+    const title = document.querySelector('.popup__input_item_title');
+    const image = document.querySelector('.popup__input_item_image');
 
     createCard(title.value, image.value);
     containerElements.prepend(cardElement);
