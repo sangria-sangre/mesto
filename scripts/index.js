@@ -11,10 +11,10 @@ btnClose.forEach((button) => {
 const profileBtnEdit = document.querySelector('.profile__edit-btn');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
-const profileTitleInput = document.querySelector('.profile-popup__input_type_title');
-const profileSubtitleInput = document.querySelector('.profile-popup__input_type_subtitle');
-const profileForm = document.querySelector('.profile-popup__form');
-const profilePopup = document.querySelector('.profile-popup');
+const profileTitleInput = document.querySelector('.popup__input_profile_type_title');
+const profileSubtitleInput = document.querySelector('.popup__input_profile_type_subtitle');
+const profileForm = document.querySelector('.popup__form_profile');
+const profilePopup = document.querySelector('.popup_profile');
 
 function openPopup(popup) {
     popup.classList.add('popup_opened');
@@ -40,15 +40,15 @@ profileBtnEdit.addEventListener('click', function () {
 profileForm.addEventListener('submit', savePopup);
 
 //image
-const imagePopup = document.querySelector('.image-popup');
-const imagePopupPicture = document.querySelector('.image-popup__image');
-const imagePopupSubtitle = document.querySelector('.image-popup__subtitle');
+const imagePopup = document.querySelector('.popup_image');
+const imagePopupPicture = document.querySelector('.popup__picture');
+const imagePopupSubtitle = document.querySelector('.popup__title_image');
 
 //items
 
 const profileBtnAdd = document.querySelector('.profile__add-btn');
-const itemForm = document.querySelector('.item-popup__form');
-const itemPopup = document.querySelector('.item-popup');
+const itemForm = document.querySelector('.popup__form_item');
+const itemPopup = document.querySelector('.popup_item');
 const initialCards = [
     {
         name: 'Архыз',
@@ -118,8 +118,8 @@ showCards();
 function addCards(event) {
     event.preventDefault();
 
-    const title = document.querySelector('.item-popup__input_type_title');
-    const image = document.querySelector('.item-popup__input_type_image');
+    const title = document.querySelector('.popup__input_item_type_title');
+    const image = document.querySelector('.popup__input_item_type_image');
 
     createCard(title.value, image.value);
     containerElements.prepend(cardElement);
