@@ -10,37 +10,35 @@
 </head>
 
 <body class="body">
-    <div class="popup">
-        <div class="popup__container">
-            <button class="popup__close-btn" type="button"></button>
-            <form class="popup__form" action="get" name="profile-edit">
+    <div class="popup profile-popup">
+        <div class="profile-popup__container">
+            <button class="popup__close-btn profile-popup__close-btn" type="button"></button>
+            <form class="popup__form profile-popup__form" action="get" name="profile-edit">
                 <h2 class="popup__name">Редактировать профиль</h2>
-                <input class="popup__input popup__input_type_title" type="text" name="profile-name">
-                <input class="popup__input popup__input_type_subtitle" type="text" name="profile-description">
-                <button class="popup__save-btn" type="submit">Сохранить</button>
+                <input class="popup__input profile-popup__input_type_title" type="text" name="profile-name">
+                <input class="popup__input profile-popup__input_type_subtitle" type="text" name="profile-description">
+                <button class="popup__save-btn profile-popup__save-btn" type="submit">Сохранить</button>
             </form>
         </div>
     </div>
 
-    <div class="popup-item">
-        <div class="popup-item__container">
-            <button class="popup-item__close-btn" type="button"></button>
-            <form class="popup-item__form" action="get" name="new-item">
-                <h2 class="popup-item__name">Новое место</h2>
-                <input class="popup-item__input popup-item__input_type_title" type="text" name="item-name"
-                    placeholder="Название">
-                <input class="popup-item__input popup-item__input_type_image" type="text" name="item-image"
-                    placeholder="Ссылка на картинку">
-                <button class="popup-item__create-btn" type="submit">Создать</button>
+    <div class="popup item-popup">
+        <div class="item-popup__container">
+            <button class="popup__close-btn item-popup__close-btn" type="button"></button>
+            <form class="popup__form item-popup__form" action="get" name="new-item">
+                <h2 class="popup__name">Новое место</h2>
+                <input class="popup__input item-popup__input_type_title" type="text" name="item-name" placeholder="Название">
+                <input class="popup__input item-popup__input_type_image" type="text" name="item-image" placeholder="Ссылка на картинку">
+                <button class="popup__save-btn item-popup__save-btn" type="submit">Создать</button>
             </form>
         </div>
     </div>
 
-    <div class="popup-image">
-        <div class="popup-image__container">
-            <button class="popup-image__close-btn" type="button"></button>
-            <img class="popup-image__image" src="#" alt="#">
-            <p class="popup-image__subtitle"></p>
+    <div class="popup image-popup">
+        <div class="image-popup__container">
+            <button class="popup__close-btn image-popup__close-btn" type="button"></button>
+            <img class="image-popup__image" src="#" alt="#">
+            <p class="image-popup__subtitle"></p>
         </div>
     </div>
 
