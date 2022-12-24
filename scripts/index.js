@@ -84,31 +84,32 @@ const cardTemplate = elementTemplate.querySelector('.element').cloneNode(true);
 
 function createCard(title, image) {
 
-    const cloneElement = elementTemplate.querySelector('.element').cloneNode(true); 
-        cloneElement.querySelector('.element__image').src = image; 
-        cloneElement.querySelector('.element__image').alt = title; 
-        cloneElement.querySelector('.element__title').textContent = title; 
+    const cloneElement = elementTemplate.querySelector('.element').cloneNode(true);
+    cloneElement.querySelector('.element__image').src = image;
+    cloneElement.querySelector('.element__image').alt = title;
+    cloneElement.querySelector('.element__title').textContent = title;
 
-        cloneElement.querySelector('.element__like-btn').addEventListener('click', function (event) { 
-            event.target.classList.toggle('element__like-btn_active'); 
-        }); 
+    cloneElement.querySelector('.element__like-btn').addEventListener('click', function (event) {
+        event.target.classList.toggle('element__like-btn_active');
+    });
 
-        cloneElement.querySelector('.element__delete-btn').addEventListener('click', function (event) { 
-            event.target.parentElement.remove(); 
-        }); 
+    cloneElement.querySelector('.element__delete-btn').addEventListener('click', function (event) {
+        event.target.parentElement.remove();
+    });
 
-        cloneElement.querySelector('.element__image').addEventListener('click', function () { 
-            imagePopupPicture.src = image; 
-            imagePopupPicture.alt = title; 
-            imagePopupSubtitle.textContent = title; 
-            imagePopup.classList.add('popup_opened');
-        }); 
+    cloneElement.querySelector('.element__image').addEventListener('click', function () {
+        imagePopupPicture.src = image;
+        imagePopupPicture.alt = title;
+        imagePopupSubtitle.textContent = title;
+        imagePopup.classList.add('popup_opened');
+    });
 
     return cloneElement;
 }
 
 function showCards() {
-    initialCards.forEach(function (item) {;
+    initialCards.forEach(function (item) {
+        ;
         const cardElement = createCard(item.name, item.link);
         containerElements.prepend(cardElement);
     });
