@@ -13,10 +13,14 @@
     <div class="popup popup_profile">
         <div class="popup__container popup__container_profile">
             <button class="popup__close-btn popup__close-btn_profile" type="button"></button>
-            <form class="popup__form popup__form_profile" action="get" name="profile-edit">
+            <form class="popup__form popup__form_profile" action="get" name="profile-edit" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input class="popup__input popup__input_profile_title" type="text" name="profile-name">
-                <input class="popup__input popup__input_profile_subtitle" type="text" name="profile-description">
+                <input class="popup__input popup__input_profile_title" id="title-input" type="text" name="profile-name"
+                    minlength="2" maxlength="40" required novalidate>
+                <span class="popup__input-error title-input-error"></span>
+                <input class="popup__input popup__input_profile_subtitle" id="subtitle-input" type="text"
+                    name="profile-description" minlength="2" maxlength="200" required>
+                <span class="popup__input-error subtitle-input-error"></span>
                 <button class="popup__save-btn popup__save-btn_profile" type="submit">Сохранить</button>
             </form>
         </div>
@@ -25,10 +29,14 @@
     <div class="popup popup_item">
         <div class="popup__container popup__container_item">
             <button class="popup__close-btn popup__close-btn_item" type="button"></button>
-            <form class="popup__form popup__form_item" action="get" name="new-item">
+            <form class="popup__form popup__form_item" action="get" name="new-item" novalidate>
                 <h2 class="popup__title">Новое место</h2>
-                <input class="popup__input popup__input_item_title" type="text" name="item-name" placeholder="Название">
-                <input class="popup__input popup__input_item_image" type="text" name="item-image" placeholder="Ссылка на картинку">
+                <input class="popup__input popup__input_item_title" id="title-input" type="text" name="item-name"
+                    placeholder="Название" minlength="2" maxlength="30" required>
+                <span class="popup__input-error title-input-error"></span>
+                <input class="popup__input popup__input_item_image" id="url-input" type="url" name="item-image"
+                    placeholder="Ссылка на картинку" required>
+                <span class="popup__input-error url-input-error"></span>
                 <button class="popup__save-btn popup__save-btn_item" type="submit">Создать</button>
             </form>
         </div>
@@ -74,7 +82,8 @@
             <button class="element__delete-btn" type="button"></button>
         </article>
     </template>
-
+    
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
 </body>
 
