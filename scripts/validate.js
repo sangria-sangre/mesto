@@ -1,4 +1,3 @@
-
 //Показать сообщение об ошибке
 
 function showInputError(formElement, inputElement, config) {
@@ -8,7 +7,6 @@ function showInputError(formElement, inputElement, config) {
     errorElement.textContent = inputElement.validationMessage;
     inputElement.classList.add(config.inputErrorClass);
 }
-
 
 //Cкрыть сообщение об ошибке
 
@@ -32,7 +30,6 @@ function checkInputValidity(formElement, inputElement, config) {
     }
 }
 
-
 //Проверка всех инпутов на ошибку
 
 function hasInvalidInput(inputList) {
@@ -40,7 +37,6 @@ function hasInvalidInput(inputList) {
         return !inputElement.validity.valid;
     });
 }
-
 
 //Активация или дизактивация кнопки по результатам проверки инпутов
 
@@ -54,7 +50,6 @@ function toggleButtonState(inputList, buttonElement, config) {
         buttonElement.disabled = false;
     }
 }
-
 
 //Повесть обработчик на все инпуты
 
