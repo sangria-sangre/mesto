@@ -8,7 +8,6 @@ const profileTitleInput = document.querySelector('.popup__input_profile_title');
 const profileSubtitleInput = document.querySelector('.popup__input_profile_subtitle');
 const profileForm = document.querySelector('.popup__form_profile');
 const profilePopup = document.querySelector('.popup_profile');
-const profilePopupSubmitBtn = profilePopup.querySelector(validationConfig.submitButtonSelector);
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
@@ -30,7 +29,6 @@ function saveProfilePopup(evt) {
 profileBtnEdit.addEventListener('click', function () {
     profileTitleInput.value = profileTitle.textContent;
     profileSubtitleInput.value = profileSubtitle.textContent;
-    profilePopupSubmitBtn.classList.remove(validationConfig.inactiveButtonClass);
     openPopup(profilePopup);
 });
 
@@ -49,7 +47,6 @@ const itemInputTitle = document.querySelector('.popup__input_item_title');
 const itemInputImage = document.querySelector('.popup__input_item_image');
 const cardsContainer = document.querySelector('.elements');
 const elementTemplate = document.querySelector('#element').content;
-const itemPopupSubmitBtn = itemPopup.querySelector(validationConfig.submitButtonSelector);
 
 function createCard(title, image) {
 
@@ -111,7 +108,6 @@ function addCards(event) {
 }
 
 profileBtnAdd.addEventListener('click', function () {
-    itemPopupSubmitBtn.classList.add(validationConfig.inactiveButtonClass);
     openPopup(itemPopup);
 });
 
