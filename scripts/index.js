@@ -1,23 +1,22 @@
 import { validationConfig, initialCards } from './constants.js';
-import Cards from './cards.js'
+import Card from './Card.js'
 import FormValidator from './FormValidator.js';
 
-//поставить валидацию на каждом инпуте в документе
+//Активация валидации
+const formValidators = {}
 
-const inputList = Array.from(document.querySelectorAll(validationConfig.inputSelector));
-inputList.forEach((inputElement) => {
-    const validator = new FormValidator(validationConfig, inputElement);
-    validator.enableValidation();
-});
+const enableValidation = (config) => {
+    const formList = Array.from(document.querySelectorAll(config.formSelector))
+    formList.forEach((formElement) => {
+        const validator = new FormValidator(config, formElement);
+        const formName = formElement.getAttribute('name');
 
-//show cards
+        formValidators[formName] = validator;
+        validator.enableValidation();
+    });
+};
 
-initialCards.forEach((obj) => {
-    const card = new Cards(obj.name, obj.link);
-    const cardElement = card.generadeCard();
-
-    document.querySelector('.elements').prepend(cardElement);
-});
+enableValidation(validationConfig);
 
 //profile
 const profileBtnEdit = document.querySelector('.profile__edit-btn');
@@ -27,7 +26,6 @@ const profileTitleInput = document.querySelector('.popup__input_profile_title');
 const profileSubtitleInput = document.querySelector('.popup__input_profile_subtitle');
 const profileForm = document.querySelector('.popup__form_profile');
 const profilePopup = document.querySelector('.popup_profile');
-const profileBtnSave = profileForm.querySelector('.popup__save-btn');
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
@@ -49,15 +47,27 @@ function saveProfilePopup(evt) {
 profileBtnEdit.addEventListener('click', function () {
     profileTitleInput.value = profileTitle.textContent;
     profileSubtitleInput.value = profileSubtitle.textContent;
-    profileBtnSave.classList.remove(validationConfig.inactiveButtonClass);
-    profileBtnSave.disabled = false;
+    formValidators['profile-edit'].resetValidation();
     openPopup(profilePopup);
 });
 
 profileForm.addEventListener('submit', saveProfilePopup);
 
-//new card from inputs
+//Cards
+const elementsCase = document.querySelector('.elements');
 
+function createCard(item) {
+    const card = new Card(item.name, item.link, '.element-template', handleCardClick);
+    const cardElement = card.generadeCard();
+    return cardElement;
+}
+
+initialCards.forEach((obj) => {
+    const cardElement = createCard(obj);
+    elementsCase.prepend(cardElement);
+});
+
+//New card from inputs
 const itemForm = document.querySelector('.popup__form_item');
 const itemInputTitle = document.querySelector('.popup__input_item_title');
 const itemInputImage = document.querySelector('.popup__input_item_image');
@@ -67,24 +77,35 @@ const itemPopup = document.querySelector('.popup_item');
 function addCards(event) {
     event.preventDefault();
 
-    const title = itemInputTitle.value;
-    const image = itemInputImage.value;
+    const name = itemInputTitle.value;
+    const link = itemInputImage.value;
 
-    const card = new Cards(title, image);
-    const cardElement = card.generadeCard();
-
-    document.querySelector('.elements').prepend(cardElement);
+    const cardElement = createCard({ name, link });
+    elementsCase.prepend(cardElement);
 
     closePopup(itemPopup);
-
     event.target.reset();
 }
 
 itemForm.addEventListener('submit', addCards);
 
 profileBtnAdd.addEventListener('click', function () {
+    formValidators['new-item'].resetValidation();
+    itemForm.reset();
     openPopup(itemPopup);
 });
+
+//Open popupPicture
+const popupPicture = document.querySelector('.popup__picture');
+const popupTitleImage = document.querySelector('.popup__title_image');
+const popupImage = document.querySelector('.popup_image');
+
+function handleCardClick(text, image) {
+    popupPicture.src = image;
+    popupPicture.alt = text;
+    popupTitleImage.textContent = text;
+    openPopup(popupImage);
+}
 
 //close alt
 function closePopupEsc(evt) {

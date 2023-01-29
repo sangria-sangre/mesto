@@ -34,4 +34,4 @@ const initialCards = [
     }
 ];
 
-export {validationConfig, initialCards};
+export { validationConfig, initialCards };
