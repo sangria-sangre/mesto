@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto.Russia</title>
-    <link rel="stylesheet" href="./pages/index.css">
 </head>
 
 <body class="body">
@@ -15,11 +14,11 @@
             <button class="popup__close-btn popup__close-btn_profile" type="button"></button>
             <form class="popup__form popup__form_profile" action="get" name="profile-edit" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input class="popup__input popup__input_profile_title" id="title-input" type="text" name="profile-name"
+                <input class="popup__input popup__input_profile_title" id="title-input" type="text" name="name"
                     minlength="2" maxlength="40" required novalidate>
                 <span class="popup__input-error title-input-error"></span>
                 <input class="popup__input popup__input_profile_subtitle" id="subtitle-input" type="text"
-                    name="profile-description" minlength="2" maxlength="200" required>
+                    name="info" minlength="2" maxlength="200" required>
                 <span class="popup__input-error subtitle-input-error"></span>
                 <button class="popup__save-btn popup__save-btn_profile" type="submit">Сохранить</button>
             </form>
@@ -31,10 +30,10 @@
             <button class="popup__close-btn popup__close-btn_item" type="button"></button>
             <form class="popup__form popup__form_item" action="get" name="new-item" novalidate>
                 <h2 class="popup__title">Новое место</h2>
-                <input class="popup__input popup__input_item_title" id="name-input" type="text" name="item-name"
+                <input class="popup__input popup__input_item_title" id="name-input" type="text" name="description"
                     placeholder="Название" minlength="2" maxlength="30" required>
                 <span class="popup__input-error name-input-error"></span>
-                <input class="popup__input popup__input_item_image" id="url-input" type="url" name="item-image"
+                <input class="popup__input popup__input_item_image" id="url-input" type="url" name="image"
                     placeholder="Ссылка на картинку" required>
                 <span class="popup__input-error url-input-error"></span>
                 <button class="popup__save-btn popup__save-btn_item" type="submit">Создать</button>
@@ -52,12 +51,12 @@
 
     <div class="page">
         <header class="header">
-            <img class="header__logo" src="./images/logo.svg" alt="Лого - Место">
+            <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Лого - Место">
         </header>
 
         <main class="main">
             <section class="profile">
-                <img class="profile__image" src="./images/image_profile.jpg" alt="Фото профиля">
+                <img class="profile__image" src="<%=require('./images/image_profile.jpg')%>" alt="Фото профиля">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
                 <button class="profile__edit-btn" type="button"></button>
                 <p class="profile__subtitle">Исследователь океана</p>
@@ -83,10 +82,17 @@
         </article>
     </template>
 
-    <script type="module" src="./scripts/Card.js"></script>
-    <script type="module" src="./scripts/constants.js"></script>
-    <script type="module" src="./scripts/FormValidator.js"></script>
-    <script type="module" src="./scripts/index.js"></script>
+    
+    <script type="module" src="./utils/constants.js"></script>
+    <script type="module" src="./utils/utils.js"></script>
+    <script type="module" src="./components/FormValidator.js"></script>
+    <script type="module" src="./components/Popup.js"></script>
+    <script type="module" src="./components/Card.js"></script>
+    <script type="module" src="./components/PopupWithForm.js" ></script>
+    <script type="module" src="./components/PopupWithImage.js" ></script>
+    <script type="module" src="./components/Section.js" ></script>
+    <script type="module" src="./components/UserInfo.js" ></script>
+    <script type="module" src="./pages/index.js"></script>
 
 </body>
 
