@@ -34,8 +34,12 @@ export const initialCards = [
     }
 ];
 
+export const profileInfo = {
+    name: '.profile__title',
+    info: '.profile__subtitle',
+};
+
 export const elementsCase = '.elements';
-export const elementsConteiner = document.querySelector(elementsCase);
 export const elementTemplate = '.element-template';
 export const profileBtnEdit = document.querySelector('.profile__edit-btn');
 export const profileTitleInput = document.querySelector('.popup__input_profile_title');

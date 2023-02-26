@@ -1,6 +1,6 @@
 import './index.css';
 import {
-    validationConfig, initialCards, elementsCase, elementTemplate, elementsConteiner,
+    validationConfig, initialCards, elementsCase, elementTemplate, profileInfo,
     profileBtnEdit, profileTitleInput, profileSubtitleInput, profileBtnAdd,
 } from '../utils/constants.js';
 import Card from '../components/Card.js'
@@ -51,7 +51,7 @@ const defaultCardList = new Section({
 defaultCardList.renderItems();
 
 //profileForm
-const userInfo = new UserInfo('.profile__title', '.profile__subtitle');
+const userInfo = new UserInfo(profileInfo);
 
 profileBtnEdit.addEventListener('click', function () {
     const user = userInfo.getUserInfo();
