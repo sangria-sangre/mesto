@@ -1,6 +1,6 @@
 .profile__image-edit {
     padding: 47px;
-    margin: 0;
+    margin: 38.25px 0;
     position: absolute;
     width: 26px;
     height: 26px;
@@ -12,4 +12,11 @@
 .profile__image-edit:hover {
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 1280px) {
+    .profile__image-edit {
+        margin: 40px 0;
+        left: 0;
+    }
 }

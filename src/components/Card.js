@@ -92,7 +92,6 @@ export default class Card {
     _likeCounter() {
         this._chekLikeNumber(this._id)
             .then((res) => {
-                console.log(res);
                 this._likesNamberContainer.textContent = res;
             });
 
