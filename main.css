@@ -20,8 +20,8 @@
 .popup__input-error_active{display:block}
 .popup__title_delete-item{margin:34px 36px}
 .popup__save-btn_delete-item{margin:2px 22px 25px}@media screen and (min-width:1280px){.popup__save-btn_delete-item{margin:2px 36px 36px}}
-.popup__save-btn_dots{opacity:0;transition:opacity .3s ease-out}
-.popup__save-btn_dots_visible{opacity:1}
+.popup__loading{opacity:0;transition:opacity .3s ease-out}
+.popup__loading_active{opacity:1}
 .page{margin:0 auto;max-width:880px;padding:0}
 .header{border-bottom:1px solid rgba(84,84,84,.7);margin:0;max-width:880px;padding:0}
 .header__logo{background-color:transparent;display:block;height:24.4px;margin:28px 27px 31.6px;padding:0;width:103.74px}@media screen and (min-width:1280px){.header__logo{height:33px;margin:45px 0 41px;width:142px}}
