@@ -1,9 +1,8 @@
 .element__like-btn {
-    margin: 30px 20px;
+    margin: 0 0 4px;
     padding: 0;
     width: 23px;
     height: 19px;
-    justify-self: end;
     background-image: url(../../../images/like.svg);
     background-size: contain;
     background-color: transparent;

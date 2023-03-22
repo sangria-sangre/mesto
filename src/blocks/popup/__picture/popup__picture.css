@@ -4,10 +4,3 @@
     max-width: 75vw;
     max-height: 75vh;
 }
-
-@media screen and (min-width: 1280px) {
-    .popup__picture {
-        max-width: 75vw;
-        max-height: 75vh;
-    }
-}

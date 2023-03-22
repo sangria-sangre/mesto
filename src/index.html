@@ -9,6 +9,7 @@
 </head>
 
 <body class="body">
+
     <div class="popup popup_profile">
         <div class="popup__container popup__container_profile">
             <button class="popup__close-btn popup__close-btn_profile" type="button"></button>
@@ -17,10 +18,23 @@
                 <input class="popup__input popup__input_profile_title" id="title-input" type="text" name="name"
                     minlength="2" maxlength="40" required novalidate>
                 <span class="popup__input-error title-input-error"></span>
-                <input class="popup__input popup__input_profile_subtitle" id="subtitle-input" type="text"
-                    name="info" minlength="2" maxlength="200" required>
+                <input class="popup__input popup__input_profile_subtitle" id="subtitle-input" type="text" name="about"
+                    minlength="2" maxlength="200" required>
                 <span class="popup__input-error subtitle-input-error"></span>
-                <button class="popup__save-btn popup__save-btn_profile" type="submit">Сохранить</button>
+                <button class="popup__save-btn popup__save-btn_profile" type="submit">Сохранить<span class="popup__save-btn_dots">...</span></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup popup_avatar-update">
+        <div class="popup__container">
+            <button class="popup__close-btn" type="button"></button>
+            <form class="popup__form popup__form_avatar-update" action="get" name="avatar-update" novalidate>
+                <h2 class="popup__title">Обновить аватар</h2>
+                <input class="popup__input popup__input_avatar-update" id="url-avatar" type="url" name="avatar"
+                    placeholder="Ссылка на картинку" required>
+                <span class="popup__input-error url-avatar-error"></span>
+                <button class="popup__save-btn popup__save-btn_avatar-update" type="submit">Сохранить<span class="popup__save-btn_dots">...</span></button>
             </form>
         </div>
     </div>
@@ -30,14 +44,22 @@
             <button class="popup__close-btn popup__close-btn_item" type="button"></button>
             <form class="popup__form popup__form_item" action="get" name="new-item" novalidate>
                 <h2 class="popup__title">Новое место</h2>
-                <input class="popup__input popup__input_item_title" id="name-input" type="text" name="description"
+                <input class="popup__input popup__input_item_title" id="name-input" type="text" name="name"
                     placeholder="Название" minlength="2" maxlength="30" required>
                 <span class="popup__input-error name-input-error"></span>
-                <input class="popup__input popup__input_item_image" id="url-input" type="url" name="image"
+                <input class="popup__input popup__input_item_image" id="url-input" type="url" name="link"
                     placeholder="Ссылка на картинку" required>
                 <span class="popup__input-error url-input-error"></span>
-                <button class="popup__save-btn popup__save-btn_item" type="submit">Создать</button>
+                <button class="popup__save-btn popup__save-btn_item" type="submit">Создать<span class="popup__save-btn_dots">...</span></button>
             </form>
+        </div>
+    </div>
+
+    <div class="popup popup_delete-item">
+        <div class="popup__container">
+            <button class="popup__close-btn popup__close-btn_delete-item" type="button"></button>
+            <p class="popup__title popup__title_delete-item">Вы уверены?</p>
+            <button class="popup__save-btn popup__save-btn_delete-item" type="click">Да<span class="popup__save-btn_dots">...</span></button>
         </div>
     </div>
 
@@ -56,10 +78,11 @@
 
         <main class="main">
             <section class="profile">
-                <img class="profile__image" src="<%=require('./images/image_profile.jpg')%>" alt="Фото профиля">
-                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <img class="profile__image-edit" src="<%=require('./images/edit_profile.svg')%>" alt="Белый карандаш">
+                <img class="profile__image" src="#" alt="Фото профиля">
+                <h1 class="profile__title"></h1>
                 <button class="profile__edit-btn" type="button"></button>
-                <p class="profile__subtitle">Исследователь океана</p>
+                <p class="profile__subtitle"></p>
                 <button class="profile__add-btn" type="button"></button>
             </section>
 
@@ -77,12 +100,13 @@
         <article class="element">
             <img class="element__image" src="#" alt="#">
             <h2 class="element__title"></h2>
-            <button class="element__like-btn" type="button"></button>
+            <div class="element__column">
+                <button class="element__like-btn" type="button"></button>
+                <p class="element__likes-number">2</p>
+            </div>
             <button class="element__delete-btn" type="button"></button>
         </article>
     </template>
-
-    <script type="module" src="./pages/index.js"></script>
 
 </body>
 

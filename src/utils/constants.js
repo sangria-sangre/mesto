@@ -34,9 +34,11 @@ export const initialCards = [
     }
 ];
 
+
+
 export const profileInfo = {
     name: '.profile__title',
-    info: '.profile__subtitle',
+    about: '.profile__subtitle',
 };
 
 export const elementsCase = '.elements';
@@ -45,3 +47,9 @@ export const profileBtnEdit = document.querySelector('.profile__edit-btn');
 export const profileTitleInput = document.querySelector('.popup__input_profile_title');
 export const profileSubtitleInput = document.querySelector('.popup__input_profile_subtitle');
 export const profileBtnAdd = document.querySelector('.profile__add-btn');
+export const apiUrl = 'https://mesto.nomoreparties.co/v1/cohort-61';
+export const apiHeaders = '2509058a-382e-4c49-aae4-82e3509c7f6a';
+export const likesNamberSelector = '.element__likes-number';
+export const userPhotoCase = document.querySelector('.profile__image');
+export const userPhotoEdit = document.querySelector('.profile__image-edit');
+export const dots = document.querySelector('.popup__save-btn_dots');
