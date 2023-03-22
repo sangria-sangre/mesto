@@ -1,6 +1,6 @@
 import './index.css';
 import {
-    validationConfig, elementsCase, elementTemplate, profileInfo, dots,
+    validationConfig, elementsCase, elementTemplate, profileInfo,
     profileBtnEdit, profileTitleInput, profileSubtitleInput, profileBtnAdd,
     apiUrl, apiHeaders, userPhotoCase, userPhotoEdit
 } from '../utils/constants.js';

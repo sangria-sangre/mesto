@@ -6,7 +6,7 @@ export default class PopupWithForm extends Popup {
         this._popupForm = this._popup.querySelector('.popup__form');
         this._inputList = Array.from(this._popup.querySelectorAll('.popup__input'));
         this._submitForm = submitForm;
-        this._dots = this._popupForm.querySelector('.popup__save-btn_dots');
+        this._dots = this._popupForm.querySelector('.popup__loading');
     }
 
     _getInputValues() {
@@ -35,9 +35,9 @@ export default class PopupWithForm extends Popup {
 
     _renderLoading(isLoading) {
         if (isLoading) {
-            this._dots.classList.add('.popup__save-btn_dots_visible');
+            this._dots.classList.add('.popup__loading_active');
         } else {
-            this._dots.classList.remove('.popup__save-btn_dots_visible');
+            this._dots.classList.remove('.popup__loading_active');
         }
     }
 }

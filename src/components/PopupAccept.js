@@ -5,7 +5,7 @@ export default class PopupAccept extends Popup {
         super(containerSelector);
         this._btn = this._popup.querySelector('.popup__save-btn');
         this._deleteElement = deleteElement;
-        this._dots = this._popup.querySelector('.popup__save-btn_dots');
+        this._dots = this._popup.querySelector('.popup__loading');
     }
 
     setEventListenersSave(id, element){
@@ -24,9 +24,9 @@ export default class PopupAccept extends Popup {
 
     _renderLoading(isLoading) {
         if (isLoading) {
-            this._dots.classList.add('.popup__save-btn_dots_visible');
+            this._dots.classList.add('.popup__loading_active');
         } else {
-            this._dots.classList.remove('.popup__save-btn_dots_visible');
+            this._dots.classList.remove('.popup__loading_active');
         }
     }
 }

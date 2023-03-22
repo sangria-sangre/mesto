@@ -52,4 +52,3 @@ export const apiHeaders = '2509058a-382e-4c49-aae4-82e3509c7f6a';
 export const likesNamberSelector = '.element__likes-number';
 export const userPhotoCase = document.querySelector('.profile__image');
 export const userPhotoEdit = document.querySelector('.profile__image-edit');
-export const dots = document.querySelector('.popup__save-btn_dots');
