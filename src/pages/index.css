@@ -24,6 +24,7 @@
 @import url(../blocks/popup/__save-btn/_delete-item/popup__save-btn_delete-item.css);
 @import url(../blocks/popup/__loading/popup__loading.css);
 @import url(../blocks/popup/__loading/_active/popup__loading_active.css);
+@import url(../blocks/popup/__btn-default-name/popup__btn-default-name_disable/popup__btn-default-name_disable.css);
 
 @import url(../blocks/page/page.css);
 

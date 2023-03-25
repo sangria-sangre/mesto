@@ -12,7 +12,11 @@ export default class UserInfo {
     }
 
     setUserInfo(data) {
+        if(data.name && data.about){
         this._userName.textContent = data.name;
         this._userAbout.textContent = data.about;
+    } else {
+        alert('Произошла ошибка');
+    }
     }
 }

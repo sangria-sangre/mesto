@@ -18,6 +18,10 @@ export default class Api {
         return Promise.reject(`Ошибка: ${res.status}`);
     }
 
+    getAllData() {
+        return Promise.all([this.getCard(), this.getUserInfo()]);
+    }
+
     getUserInfo() {
         return fetch(`${this._baseUrl}/users/me`, {
             headers: this._getHeaders()
@@ -32,12 +36,6 @@ export default class Api {
                 name: data.name,
                 about: data.about
             })
-        }).then(this._getJson);
-    }
-
-    getUserPhoto() {
-        return fetch(`${this._baseUrl}/users/me`, {
-            headers: this._getHeaders()
         }).then(this._getJson);
     }
 

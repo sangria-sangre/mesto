@@ -49,6 +49,5 @@ export const profileSubtitleInput = document.querySelector('.popup__input_profil
 export const profileBtnAdd = document.querySelector('.profile__add-btn');
 export const apiUrl = 'https://mesto.nomoreparties.co/v1/cohort-61';
 export const apiHeaders = '2509058a-382e-4c49-aae4-82e3509c7f6a';
-export const likesNamberSelector = '.element__likes-number';
 export const userPhotoCase = document.querySelector('.profile__image');
 export const userPhotoEdit = document.querySelector('.profile__image-edit');
