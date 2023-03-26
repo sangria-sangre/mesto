@@ -4,6 +4,7 @@ import {
     profileBtnEdit, profileTitleInput, profileSubtitleInput, profileBtnAdd,
     apiUrl, apiHeaders, userPhotoCase, userPhotoEdit
 } from '../utils/constants.js';
+import { renderLoading } from '../utils/utils';
 import Card from '../components/Card.js'
 import FormValidator from '../components/FormValidator.js';
 import Section from '../components/Section.js';
@@ -24,7 +25,6 @@ const enableValidation = (config) => {
     formList.forEach((formElement) => {
         const validator = new FormValidator(config, formElement);
         const formName = formElement.getAttribute('name');
-
         formValidators[formName] = validator;
         validator.enableValidation();
     });
@@ -103,6 +103,8 @@ const defaultCardList = new Section(elementsCase, {
 
 api.getAllData()
     .then(([items, user]) => {
+        userInfo.setUserInfo(user);
+        userPhotoCase.src = user.avatar;
         defaultCardList.renderItems(items, user._id);
     })
     .catch((err) => {
@@ -121,25 +123,16 @@ const popupDelete = new PopupAccept('.popup_delete-item',
                 .then(() => {
                     popupDelete.close();
                 })
-                .then(() => {
-                    renderLoading(false, popup);
-                })
                 .catch((err) => {
                     console.log(err);
+                })
+                .finally(() => {
+                    renderLoading(false, popup);
                 })
         }
     });
 
 popupDelete.setEventListeners();
-
-//profileInfo
-api.getUserInfo().then(items => {
-    userInfo.setUserInfo(items);
-    userPhotoCase.src = items.avatar;
-})
-    .catch((err) => {
-        console.log(err);
-    });
 
 //profileInfo edit
 userPhotoEdit.addEventListener('click', () => {
@@ -158,11 +151,11 @@ const popupEditImageProfile = new PopupWithForm('.popup_avatar-update', {
             .then(() => {
                 popupEditImageProfile.close();
             })
-            .then(() => {
-                renderLoading(false, popup);
-            })
             .catch((err) => {
                 console.log(err);
+            })
+            .finally(() => {
+                renderLoading(false, popup);
             })
     }
 });
@@ -190,11 +183,11 @@ const popupWithFormProfile = new PopupWithForm('.popup_profile', {
             .then(() => {
                 popupWithFormProfile.close();
             })
-            .then(() => {
-                renderLoading(false, popup);
-            })
             .catch((err) => {
                 console.log(err);
+            })
+            .finally(() => {
+                renderLoading(false, popup);
             })
     }
 });
@@ -213,11 +206,11 @@ const popupWithFormItem = new PopupWithForm('.popup_item', {
             .then(() => {
                 popupWithFormItem.close();
             })
-            .then(() => {
-                renderLoading(false, popup);
-            })
             .catch((err) => {
                 console.log(err);
+            })
+            .finally(() => {
+                renderLoading(false, popup);
             })
     }
 });
@@ -228,15 +221,3 @@ profileBtnAdd.addEventListener('click', function () {
     formValidators['new-item'].resetValidation();
     popupWithFormItem.open();
 });
-
-function renderLoading(isLoading, popup) {
-    const btn = popup.querySelector('.popup__btn-default-name');
-    const loading = popup.querySelector('.popup__loading');
-    if (isLoading) {
-        btn.classList.add('popup__btn-default-name_disable');
-        loading.classList.add('popup__loading_active');
-    } else {
-        btn.classList.remove('popup__btn-default-name_disable');
-        loading.classList.remove('popup__loading_active')
-    }
-}
